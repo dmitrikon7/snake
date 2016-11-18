@@ -10,29 +10,29 @@ namespace snake
     {
         static void Main(string[] args)
         {
+            Console.SetBufferSize(80, 25);
             Console.CursorVisible = false;
 
-            Point p1 = new Point(1, 5, '-');
-            Point p2 = new Point(2, 5, '-');
-            Point p3 = new Point(3, 5, '-');
-            Point p4 = new Point(4, 5, '-');
-            Point p5 = new Point(5, 5, '-');
-            Point p6 = new Point(6, 5, '-');
-            Point p7 = new Point(7, 5, '|');
-            Point p8 = new Point(7, 4, '|');
-            Point p9 = new Point(7, 3, '|');
-            Point p10 = new Point(7, 2, '*');
-            p1.Draw();
-            p2.Draw();
-            p3.Draw();
-            p4.Draw();
-            p5.Draw();
-            p6.Draw();
-            p7.Draw();
-            p8.Draw();
-            p9.Draw();
-            p10.Draw();
+            VerticalLine leftLine = new VerticalLine(0, 24, 0, '|');
+            VerticalLine rigthLine = new VerticalLine(0, 23, 78, '|');
+            HorizontalLine topLine = new HorizontalLine(1, 77, 0, '-');
+            HorizontalLine bottomLine = new HorizontalLine(1, 77, 23, '-');
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            leftLine.Draw();
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            rigthLine.Draw();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            topLine.Draw();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            bottomLine.Draw();
+
+            Console.ResetColor();
+            Point p = new Point(40, 12, '*');
+            p.Draw();
             Console.ReadLine();
         }
     }
